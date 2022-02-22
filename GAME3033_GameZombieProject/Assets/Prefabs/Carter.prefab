@@ -3271,6 +3271,9 @@ MonoBehaviour:
   walkjumpForce: 5
   runjumpForce: 3.75
   currentJumpForce: 0
+  currentSpeed: 0
+  followTarget: {fileID: 8203135318974049385}
+  aimSensitivity: 1
 --- !u!114 &5196585135920442613
 MonoBehaviour:
   m_ObjectHideFlags: 0
