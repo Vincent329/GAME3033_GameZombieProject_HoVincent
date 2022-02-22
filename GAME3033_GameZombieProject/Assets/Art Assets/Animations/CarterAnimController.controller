@@ -341,7 +341,7 @@ AnimatorController:
     m_Mask: {fileID: 31900000, guid: 5485918874921984aaef4d8de9389f4c, type: 2}
     m_Motions: []
     m_Behaviours: []
-    m_BlendingMode: 0
+    m_BlendingMode: 1
     m_SyncedLayerIndex: -1
     m_DefaultWeight: 1
     m_IKPass: 1
@@ -393,7 +393,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: f88da54c349e8934baf3f9a1b218de1e, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: a0ff4e8b7dab4f6459e2785c36934962, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -401,7 +401,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 37c7bb1c0521bbc43b66a6fd6fff2ba7, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: 64e06e7f7076ee5468828b160dbb745c, type: 3}
     m_Threshold: 0.25
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -409,7 +409,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: f94a891478648a149b1d4481825961a1, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: ba29166f02b2f0c419ada99a156a76d6, type: 3}
     m_Threshold: 0.5
     m_Position: {x: -1, y: 0}
     m_TimeScale: 0.75
@@ -417,7 +417,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 2553dea77b0806f4083bfd8f07737fa5, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: cad05a4d09cd51a44a50e2025d329312, type: 3}
     m_Threshold: 0.75
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -425,7 +425,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 7eca932ba23a6e345bc02e94aedebe76, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: 97af0edc694732748ac40418ddecd3ec, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
