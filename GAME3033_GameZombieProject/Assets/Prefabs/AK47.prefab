@@ -200,6 +200,7 @@ Transform:
   - {fileID: 1317932221167582972}
   - {fileID: 1321213300275610778}
   - {fileID: 1320835685446343150}
+  - {fileID: 6001144892578221418}
   m_Father: {fileID: 2042854866716834571}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -76.086, y: 21.944, z: 83.2}
@@ -359,6 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2042854866716834571}
+  - component: {fileID: 6153866938813240239}
   m_Layer: 0
   m_Name: AK47
   m_TagString: Untagged
@@ -381,4 +383,62 @@ Transform:
   - {fileID: 1318332540253633220}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6153866938813240239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187402873086734599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedbb35224d9f474d9de4afec7874b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gripLocation: {fileID: 6001144892578221418}
+  weaponStats:
+    weaponType: 0
+    weaponName: AK47
+    damage: 35
+    bulletsInClip: 30
+    clipSize: 30
+    fireStartDelay: 0
+    fireRate: 0.5
+    fireDistance: 500
+    repeating: 1
+    weaponHitLayers:
+      serializedVersion: 2
+      m_Bits: 2147483647
+    totalBullets: 500
+--- !u!1 &6336000718089862314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6001144892578221418}
+  m_Layer: 0
+  m_Name: GripIKSocketLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6001144892578221418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336000718089862314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.054, y: 0.038, z: 0.344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1318332540253633220}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
