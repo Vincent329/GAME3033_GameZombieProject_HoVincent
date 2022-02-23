@@ -105,30 +105,41 @@ public class WeaponComponent : MonoBehaviour
     public virtual void StopReloading()
     {
         isReloading = false;
-        //if (firingEffect)
-        //{
-        //    firingEffect.Stop();
-        //}
+        if (firingEffect.isPlaying)
+        {
+            firingEffect.Stop();
+        }
+
     }
 
 
     protected virtual void ReloadWeapon()
     {
         // if there's a firing effect, hide it here
-        if (firingEffect.isPlaying)
-        {
-            firingEffect.Stop();
-        }
+        
+        // if there's a firing effect, hide it here
+        int bulletsToReload = weaponStats.totalBullets - (weaponStats.clipSize - weaponStats.bulletsInClip);
 
-        int bulletsToReload = weaponStats.clipSize - weaponStats.totalBullets;
-        if (bulletsToReload < 0)
+        // ---------- Reload takes all 30 bullets ------------------
+        //if (bulletsToReload < 0)
+        //{
+        //    weaponStats.totalBullets -= weaponStats.bulletsInClip;
+        //    weaponStats.bulletsInClip = weaponStats.clipSize;
+        //}
+        //else
+        //{
+        //    weaponStats.bulletsInClip = weaponStats.totalBullets;
+        //    weaponStats.totalBullets = 0;
+        //}
+
+        // -------------- COD style reload, subtract bullets ----------------------
+        if (bulletsToReload > 0)
         {
+            weaponStats.totalBullets = bulletsToReload;
             weaponStats.bulletsInClip = weaponStats.clipSize;
-            weaponStats.totalBullets -= weaponStats.clipSize;
-        }
-        else
+        } else
         {
-            weaponStats.bulletsInClip = weaponStats.totalBullets;
+            weaponStats.bulletsInClip += weaponStats.totalBullets;
             weaponStats.totalBullets = 0;
         }
     }

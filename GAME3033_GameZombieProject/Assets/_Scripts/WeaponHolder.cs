@@ -32,6 +32,7 @@ public class WeaponHolder : MonoBehaviour
         GameObject spawnedWeapon = Instantiate(weaponToSpawn, weaponSocketLocation.transform.position, weaponSocketLocation.transform.rotation, weaponSocketLocation.transform);
         equippedWeapon = spawnedWeapon.GetComponent<WeaponComponent>();
         equippedWeapon.Initialize(this);
+        PlayerEvents.InvokeOnWeaponEquipped(equippedWeapon);
         GripIKSocketLocation = equippedWeapon.gripLocation;
     }
 
