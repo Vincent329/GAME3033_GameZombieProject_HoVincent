@@ -51,7 +51,6 @@ public class WeaponHolder : MonoBehaviour
         }
         else
         {
-            Debug.Log("Stop Firing");
             StopFiring();
         }
 
@@ -60,7 +59,7 @@ public class WeaponHolder : MonoBehaviour
     public void OnReload(InputValue value)
     {
         playerController.isReloading = value.isPressed;
-        playerAnimator.SetBool(isReloadingHash, playerController.isReloading);
+        StartReloading();
     }
     private void OnAnimatorIK(int layerIndex)
     {
@@ -77,7 +76,7 @@ public class WeaponHolder : MonoBehaviour
         };
 
         playerController.isFiring = true;
-        playerAnimator.SetBool(isFiringHash, playerController.isFiring);
+        playerAnimator.SetBool(isFiringHash, true);
         equippedWeapon.StartFiringWeapon();
     }
 
@@ -97,6 +96,7 @@ public class WeaponHolder : MonoBehaviour
         if (equippedWeapon.weaponStats.totalBullets <= 0) return;
         playerAnimator.SetBool(isReloadingHash, true);
         equippedWeapon.StartReloading();
+
         InvokeRepeating(nameof(StopReloading), 0, 0.1f);
 
     }
