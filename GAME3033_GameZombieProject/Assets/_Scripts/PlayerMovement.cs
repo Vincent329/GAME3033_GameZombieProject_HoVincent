@@ -40,8 +40,15 @@ public class PlayerMovement : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         rigidbody = GetComponent<Rigidbody>();
         animController = GetComponent<Animator>();
+       
     }
-
+    private void Start()
+    {
+        if (!GameManager.Instance.cursorActive)
+        {
+            AppEvents.InvokeOnMouseCursorEnable(false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
