@@ -110,7 +110,14 @@ public class PlayerMovement : MonoBehaviour
         if (!playerController.isJumping)
         {
             playerController.isJumping = value.isPressed;
-            rigidbody.AddForce((transform.up + (moveDirection * currentSpeed/3)) * currentJumpForce, ForceMode.Impulse);
+            if (!playerController.isRunning)
+            {
+                currentSpeed /= 5;
+            } else
+            {
+                currentSpeed /= 3;
+            }
+            rigidbody.AddForce((transform.up + (moveDirection * currentSpeed)) * currentJumpForce, ForceMode.Impulse);
             animController.SetBool(isJumpingHash, playerController.isJumping);
         }
     }
