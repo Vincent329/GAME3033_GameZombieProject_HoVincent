@@ -26,6 +26,7 @@ public class ZombieStateMachine : MonoBehaviour
         if (states.ContainsKey(stateName)) return;
         states.Add(stateName, state);
     }
+
     public void RemoveState(ZombieStateType stateName)
     {
         if (!states.ContainsKey(stateName)) return;

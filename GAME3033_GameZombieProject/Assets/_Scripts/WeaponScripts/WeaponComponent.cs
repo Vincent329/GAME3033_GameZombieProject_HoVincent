@@ -115,12 +115,7 @@ public class WeaponComponent : MonoBehaviour
 
     protected virtual void ReloadWeapon()
     {
-        // if there's a firing effect, hide it here
-        
-        // if there's a firing effect, hide it here
-        int bulletsToReload = weaponStats.totalBullets - (weaponStats.clipSize - weaponStats.bulletsInClip);
-
-        // ---------- Reload takes all 30 bullets ------------------
+          // ---------- Reload takes all 30 bullets ------------------
         //if (bulletsToReload < 0)
         //{
         //    weaponStats.totalBullets -= weaponStats.bulletsInClip;
@@ -131,6 +126,10 @@ public class WeaponComponent : MonoBehaviour
         //    weaponStats.bulletsInClip = weaponStats.totalBullets;
         //    weaponStats.totalBullets = 0;
         //}
+        // if there's a firing effect, hide it here
+        int bulletsToReload = weaponStats.totalBullets - (weaponStats.clipSize - weaponStats.bulletsInClip);
+
+      
 
         // -------------- COD style reload, subtract bullets ----------------------
         if (bulletsToReload > 0)

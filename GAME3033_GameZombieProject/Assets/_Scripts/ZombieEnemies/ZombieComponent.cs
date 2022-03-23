@@ -18,6 +18,10 @@ public class ZombieComponent : MonoBehaviour
         zombieNavMesh = GetComponent<NavMeshAgent>();
         zombieAnimator = GetComponent<Animator>();
         stateMachine = GetComponent<ZombieStateMachine>();
+    }
+
+    private void Start()
+    {
         Initialize(followTarget);
     }
 
@@ -29,7 +33,6 @@ public class ZombieComponent : MonoBehaviour
         ZombieFollowState followState = new ZombieFollowState(followTarget, this, stateMachine);
         ZombieAttackState attackState = new ZombieAttackState(followTarget, this, stateMachine);
         ZombieDeadState deadState = new ZombieDeadState(this, stateMachine);
-
         stateMachine.AddState(ZombieStateType.Idling, idleState);
         stateMachine.AddState(ZombieStateType.Following, followState);
         stateMachine.AddState(ZombieStateType.Attacking, attackState);
