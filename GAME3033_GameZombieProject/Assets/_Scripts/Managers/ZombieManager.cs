@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is attached to a general zombie manager game object on the screen to keep track of all spawner volumes
+/// </summary>
 public class ZombieManager : MonoBehaviour
 {
 
