@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Item
   itemCategory: 1
-  itemPrefab: {fileID: 1900586067242068, guid: ad49a19d2c4adc94b838606a5d459f85, type: 3}
+  itemPrefab: {fileID: 5187402873086734599, guid: ae2e5629f76a4974bb77839a46cf9250, type: 3}
   isStackable: 0
   maxSize: 1
   amountValue: 1
   weaponStates:
     weaponType: 0
     weaponName: AK47
-    damage: 20
+    damage: 35
     bulletsInClip: 30
     clipSize: 30
     fireStartDelay: 0
-    fireRate: 6
-    fireDistance: 200
+    fireRate: 6.125
+    fireDistance: 1000
     repeating: 1
     weaponHitLayers:
       serializedVersion: 2
-      m_Bits: 0
-    totalBullets: 200
+      m_Bits: 2147483647
+    totalBullets: 500
