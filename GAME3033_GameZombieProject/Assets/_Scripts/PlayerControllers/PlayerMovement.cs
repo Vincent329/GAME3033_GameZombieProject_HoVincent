@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float aimSensitivity = 1;
 
+    [SerializeField] private CinemachineVirtualCamera cinemachineAimCamera;
+
     // Animator hashes
     public readonly int movementXHash = Animator.StringToHash("MovementX");
     public readonly int movementYHash = Animator.StringToHash("MovementY");
@@ -40,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         rigidbody = GetComponent<Rigidbody>();
         animController = GetComponent<Animator>();
+        cinemachineAimCamera.gameObject.SetActive(false);
        
     }
     private void Start()
@@ -142,6 +146,19 @@ public class PlayerMovement : MonoBehaviour
     public void OnAim(InputValue value)
     {
         playerController.isAiming = value.isPressed;
+        AimCamera(value.isPressed);
+        Debug.Log("Aiming");
+    }
+
+    private void AimCamera(bool isAimPressed)
+    {
+        if (isAimPressed)
+        {
+            cinemachineAimCamera.gameObject.SetActive(true);
+        } else
+        {
+            cinemachineAimCamera.gameObject.SetActive(false);
+        }
     }
 
     public void OnLook(InputValue value)

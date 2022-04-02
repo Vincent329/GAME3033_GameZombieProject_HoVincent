@@ -61,9 +61,9 @@
                 },
                 {
                     "name": "Aim",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "7f5dfd8e-0a0c-4f0e-a4b9-5aafd15f0ad7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -324,7 +324,7 @@
                 {
                     "name": "",
                     "id": "25e729a5-24be-4f46-a396-e455ca008fdb",
-                    "path": "<Keyboard>/i",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
