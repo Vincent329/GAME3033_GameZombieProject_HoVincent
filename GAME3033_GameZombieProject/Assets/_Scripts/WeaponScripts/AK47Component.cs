@@ -50,6 +50,10 @@ public class AK47Component : WeaponComponent
         }
     }
 
+    /// <summary>
+    /// Shoots out a raycast to deal damage towards anything damageable in the area
+    /// </summary>
+    /// <param name="hitInfo"></param>
     void DealDamage(RaycastHit hitInfo)
     {
         IDamageable damageable = hitInfo.collider.GetComponent<IDamageable>();

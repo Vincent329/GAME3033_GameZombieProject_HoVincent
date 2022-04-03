@@ -16,8 +16,8 @@ public class WeaponHolder : MonoBehaviour
 
     [SerializeField]
     GameObject weaponSocketLocation;
-    [SerializeField]
-    Transform GripIKSocketLocation;
+    //[SerializeField]
+    //Transform GripIKSocketLocation;
 
     bool firingPressed = false;
 
@@ -33,7 +33,7 @@ public class WeaponHolder : MonoBehaviour
         equippedWeapon = spawnedWeapon.GetComponent<WeaponComponent>();
         equippedWeapon.Initialize(this);
         PlayerEvents.InvokeOnWeaponEquipped(equippedWeapon);
-        GripIKSocketLocation = equippedWeapon.gripLocation;
+        //GripIKSocketLocation = equippedWeapon.gripLocation;
     }
 
     // Update is called once per frame
@@ -62,11 +62,11 @@ public class WeaponHolder : MonoBehaviour
         playerController.isReloading = value.isPressed;
         StartReloading();
     }
-    private void OnAnimatorIK(int layerIndex)
-    {
-        playerAnimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
-        playerAnimator.SetIKPosition(AvatarIKGoal.LeftHand, GripIKSocketLocation.transform.position);
-    }
+    //private void OnAnimatorIK(int layerIndex)
+    //{
+    //    playerAnimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+    //    playerAnimator.SetIKPosition(AvatarIKGoal.LeftHand, GripIKSocketLocation.transform.position);
+    //}
 
     private void StartFiring()
     {

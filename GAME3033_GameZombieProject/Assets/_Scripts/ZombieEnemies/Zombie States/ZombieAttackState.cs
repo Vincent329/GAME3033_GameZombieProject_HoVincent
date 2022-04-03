@@ -40,13 +40,16 @@ public class ZombieAttackState : ZombieStates
     public override void Update()
     {
         //base.Update();
-        ownerZombie.transform.LookAt(followTarget.transform.position, Vector3.up);
-
-        float distanceBetween = Vector3.Distance(ownerZombie.transform.position, followTarget.transform.position);
-
-        if (distanceBetween > attackRange)
+        if (followTarget.gameObject != null)
         {
-            stateMachine.ChangeState(ZombieStateType.Following);
+            ownerZombie.transform.LookAt(followTarget.transform.position, Vector3.up);
+
+            float distanceBetween = Vector3.Distance(ownerZombie.transform.position, followTarget.transform.position);
+
+            if (distanceBetween > attackRange)
+            {
+                stateMachine.ChangeState(ZombieStateType.Following);
+            }
         }
     }
 

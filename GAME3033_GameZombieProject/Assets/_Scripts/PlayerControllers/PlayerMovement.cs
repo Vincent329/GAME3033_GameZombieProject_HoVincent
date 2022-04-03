@@ -17,15 +17,28 @@ public class PlayerMovement : MonoBehaviour
     private PlayerController playerController;
     private Rigidbody rigidbody;
     private Animator animController;
-    public GameObject followTarget;
 
     // references
     Vector2 inputVector = Vector2.zero;
     Vector3 moveDirection = Vector3.zero;
     Vector2 lookInput = Vector2.zero;
 
+    // Aiming Sensitivity and looking variables
     public float aimSensitivity = 1;
+    [SerializeField] private GameObject aimingTarget;
+    public GameObject followTarget;
 
+    [SerializeField] private float bottomClamp = -30.0f;
+    [SerializeField] private float topClamp = 70.0f;
+    [SerializeField] private float aimingThreshold = 1.0f/60.0f;
+    [SerializeField] private float cameraAngleOverride = 0.0f;
+    [SerializeField] private LayerMask aimColliderMask;
+    [SerializeField] private Transform aimLocation;
+
+    float _cinemachineTargetYaw;
+    float _cinemachineTargetPitch;
+
+    // OTS Camera
     [SerializeField] private CinemachineVirtualCamera cinemachineAimCamera;
 
     // Animator hashes
@@ -35,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     public readonly int isRunningHash = Animator.StringToHash("isRunning");
     public readonly int isFiringHash = Animator.StringToHash("isFiring");
     public readonly int isReloadingHash = Animator.StringToHash("isReloading");
-    public readonly int AimVerticalHash = Animator.StringToHash("AimVertical");
+    //public readonly int AimVerticalHash = Animator.StringToHash("AimVertical");
 
     // Start is called before the first frame update
     void Awake()
@@ -44,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         animController = GetComponent<Animator>();
         cinemachineAimCamera.gameObject.SetActive(false);
-       
+        aimingTarget.transform.rotation = Quaternion.identity;
     }
     private void Start()
     {
@@ -53,6 +66,47 @@ public class PlayerMovement : MonoBehaviour
             AppEvents.InvokeOnMouseCursorEnable(false);
         }
     }
+
+    private void OldCameraRotation()
+    {
+        // horizontal rotation
+        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.x * aimSensitivity, Vector3.up);
+        // vertical rotation
+        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.y * aimSensitivity, Vector3.left);
+
+        var angles = followTarget.transform.localEulerAngles;
+        angles.z = 0;
+
+        var angle = followTarget.transform.localEulerAngles.x;
+
+        float min = -60;
+        float max = 70.0f;
+        float range = max - min;
+        float offsetToZero = 0 - min;
+        float aimAngle = followTarget.transform.localEulerAngles.x;
+        aimAngle = (aimAngle > 180) ? aimAngle - 360 : aimAngle;
+        float val = (aimAngle + offsetToZero) / (range);
+        //animController.SetFloat(AimVerticalHash, val);
+
+
+        if (angle > 180 && angle < 300)
+        {
+            angles.x = 300;
+        }
+        if (angle < 180 && angle > 70)
+        {
+            angles.x = 70;
+        }
+
+
+        // if we aim up, adjust animations to have a mask that will let us properly animate the aim
+        followTarget.transform.localEulerAngles = angles;
+
+        // rotate the player rotation based on the look transform
+        transform.rotation = Quaternion.Euler(0, followTarget.transform.rotation.eulerAngles.y, 0);
+        followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -73,43 +127,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Aiming/looking
 
-        // horizontal rotation
-        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.x * aimSensitivity, Vector3.up);
-        // vertical rotation
-        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.y * aimSensitivity, Vector3.left);
-
-        var angles = followTarget.transform.localEulerAngles;
-        angles.z = 0;
-
-        var angle = followTarget.transform.localEulerAngles.x;
-
-        float min = -60;
-        float max = 70.0f;
-        float range = max - min;
-        float offsetToZero = 0 - min;
-        float aimAngle = followTarget.transform.localEulerAngles.x;
-        aimAngle = (aimAngle > 180) ? aimAngle - 360 : aimAngle;
-        float val = (aimAngle + offsetToZero) / (range);
-        animController.SetFloat(AimVerticalHash, val);
-
-
-        if (angle > 180 && angle < 300)
-        {
-            angles.x = 300;
-        }
-        if (angle < 180 && angle > 70)
-        {
-            angles.x = 70;
-        }
-
-
-        // if we aim up, adjust animations to have a mask that will let us properly animate the aim
-        followTarget.transform.localEulerAngles = angles;
-
-        // rotate the player rotation based on the look transform
-        transform.rotation = Quaternion.Euler(0, followTarget.transform.rotation.eulerAngles.y, 0);
-        followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
-
+        //OldCameraRotation();
+        CameraRotation();
+        AimUpdate();
     }
 
     public void OnMovement(InputValue value)
@@ -150,11 +170,56 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Aiming");
     }
 
+    private void CameraRotation()
+    {
+        if (lookInput.sqrMagnitude >= aimingThreshold)
+        {
+            _cinemachineTargetYaw += lookInput.x * Time.deltaTime * aimSensitivity;
+            _cinemachineTargetPitch -= lookInput.y * Time.deltaTime * aimSensitivity;
+        }
+
+        _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
+        _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, bottomClamp, topClamp);
+
+        aimingTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + cameraAngleOverride, _cinemachineTargetYaw, 0.0f);
+        transform.rotation = Quaternion.Euler(0, aimingTarget.transform.rotation.eulerAngles.y, 0);
+
+
+    }
+    private void AimUpdate()
+    {
+
+        Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+
+        Transform hitTransform = null;
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, Mathf.Infinity, aimColliderMask))
+        {
+            aimLocation.position = raycastHit.point;
+            hitTransform = raycastHit.transform;
+        }
+        //// rotate the player rotation based on the look transform
+        //if (playerMovement.firing)
+        //{
+        //    if (hitTransform != null)
+        //    {
+        //        Debug.Log("Hit");
+        //    }
+        //}
+    }
+    private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
+    {
+        if (lfAngle < -360f) lfAngle += 360f;
+        if (lfAngle > 360f) lfAngle -= 360f;
+        return Mathf.Clamp(lfAngle, lfMin, lfMax);
+    }
+
     private void AimCamera(bool isAimPressed)
     {
         if (isAimPressed)
         {
             cinemachineAimCamera.gameObject.SetActive(true);
+            
         } else
         {
             cinemachineAimCamera.gameObject.SetActive(false);
