@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float topClamp = 70.0f;
     [SerializeField] private float aimingThreshold = 1.0f/60.0f;
     [SerializeField] private float cameraAngleOverride = 0.0f;
+    [SerializeField] private float horizontalCameraAngleOverride = 0.0f;
     [SerializeField] private LayerMask aimColliderMask;
     [SerializeField] private Transform aimLocation;
 
