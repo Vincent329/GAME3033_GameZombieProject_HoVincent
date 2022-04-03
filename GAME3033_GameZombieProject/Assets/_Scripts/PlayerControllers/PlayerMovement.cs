@@ -126,13 +126,17 @@ public class PlayerMovement : MonoBehaviour
         transform.position += movementDirection;
 
 
+        
+    }
+
+    private void LateUpdate()
+    {
         // Aiming/looking
 
         //OldCameraRotation();
         CameraRotation();
         AimUpdate();
     }
-
     public void OnMovement(InputValue value)
     {
         inputVector = value.Get<Vector2>();
@@ -189,16 +193,21 @@ public class PlayerMovement : MonoBehaviour
     }
     private void AimUpdate()
     {
-
+        Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
 
-        Transform hitTransform = null;
         if (Physics.Raycast(ray, out RaycastHit raycastHit, Mathf.Infinity, aimColliderMask))
         {
             aimLocation.position = raycastHit.point;
-            hitTransform = raycastHit.transform;
+            mouseWorldPosition = raycastHit.point;
         }
+
+        Vector3 worldAimTarget = mouseWorldPosition;
+        worldAimTarget.y = transform.position.y;
+        Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+
+        transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime);
         //// rotate the player rotation based on the look transform
         //if (playerMovement.firing)
         //{
@@ -220,10 +229,15 @@ public class PlayerMovement : MonoBehaviour
         if (isAimPressed)
         {
             cinemachineAimCamera.gameObject.SetActive(true);
+            walkSpeed = 2.5f;
+            runSpeed = 5.0f;
             
         } else
         {
             cinemachineAimCamera.gameObject.SetActive(false);
+            walkSpeed = 5.0f;
+            runSpeed = 10.0f;
+
         }
     }
 

@@ -29637,34 +29637,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 261713072, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
+      propertyPath: m_Data.m_SourceObjects.m_Item0.transform
+      value: 
+      objectReference: {fileID: 1359892060}
     - target: {fileID: 963194227, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
-      propertyPath: field of view
-      value: 60
+      propertyPath: near clip plane
+      value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 963194228, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194228, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1394987077, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
+      propertyPath: m_Data.m_SourceObjects.m_Item0.transform
+      value: 
+      objectReference: {fileID: 1359892060}
     - target: {fileID: 1652838473744659853, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
       propertyPath: aimLocation
       value: 
       objectReference: {fileID: 1359892060}
-    - target: {fileID: 1652838473744659853, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
-      propertyPath: bottomClamp
-      value: -70
-      objectReference: {fileID: 0}
-    - target: {fileID: 1652838473744659853, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
-      propertyPath: aimSensitivity
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1652838473744659853, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
-      propertyPath: aimColliderMask.m_Bits
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 8529216678144674863, guid: a9f2f2ec11c672846865beaf4064dec9, type: 3}
       propertyPath: m_RootOrder
       value: 0

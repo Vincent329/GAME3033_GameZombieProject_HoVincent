@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1317932221167582972}
   - component: {fileID: 1311620659932309802}
   - component: {fileID: 1303564759511695050}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_AssaultRifle_01_Magazine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1321213300275610778}
   - component: {fileID: 1310592540572623138}
   - component: {fileID: 1302048042859184500}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_AssaultRifle_01_Slide_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 1314445612276162288}
   - component: {fileID: 1303689939901626876}
   - component: {fileID: 1342608817578564974}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AK47 Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 1320835685446343150}
   - component: {fileID: 1311432118291818804}
   - component: {fileID: 1302077713122048552}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_AssaultRifle_01_Trigger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3256904844588630797}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MuzzleEffectSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6001144892578221418}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GripIKSocketLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,6 +489,18 @@ PrefabInstance:
     - target: {fileID: 1320275964731592, guid: 0624c6f5a57851d48ba74b4f86ec13d7, type: 3}
       propertyPath: m_Name
       value: FX_Gunshot_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320275964731592, guid: 0624c6f5a57851d48ba74b4f86ec13d7, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706791323426068, guid: 0624c6f5a57851d48ba74b4f86ec13d7, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753057219379398, guid: 0624c6f5a57851d48ba74b4f86ec13d7, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4056852919073388, guid: 0624c6f5a57851d48ba74b4f86ec13d7, type: 3}
       propertyPath: m_RootOrder
