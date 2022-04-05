@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool isJumping;
     public bool isRunning;
     public bool isAiming;
+    public bool isInventoryOn = false;
 
     public InventoryComponent inventory;
 
@@ -18,5 +19,7 @@ public class PlayerController : MonoBehaviour
     public void OnInventory(InputValue value)
     {
         Debug.Log("Inventory");
+        isInventoryOn = !isInventoryOn;
+        gameUIController.ToggleInventory(isInventoryOn);
     }
 }

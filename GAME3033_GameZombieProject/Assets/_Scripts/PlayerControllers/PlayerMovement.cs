@@ -42,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
     // OTS Camera
     [SerializeField] private CinemachineVirtualCamera cinemachineAimCamera;
 
+    // Inventory Canvas
+    [SerializeField] private GameUIController uiController;
+    private bool isInventoryOn;
+
     // Animator hashes
     public readonly int movementXHash = Animator.StringToHash("MovementX");
     public readonly int movementYHash = Animator.StringToHash("MovementY");
@@ -59,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         animController = GetComponent<Animator>();
         cinemachineAimCamera.gameObject.SetActive(false);
         aimingTarget.transform.rotation = Quaternion.identity;
+        isInventoryOn = false;
     }
     private void Start()
     {
