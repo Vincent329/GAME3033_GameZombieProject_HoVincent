@@ -18,7 +18,7 @@ public class WeaponScriptable : EquippableScriptable
             // invvoke on weapon from player events here for inventory
             // equip weapon from weapon holder on player controller
             playerController.weaponHolder.EquipWeapon(this);
-            PlayerEvents.InvokeOnWeaponEquipped(itemPrefab.GetComponent<WeaponComponent>());
+            //PlayerEvents.InvokeOnWeaponEquipped(itemPrefab.GetComponent<WeaponComponent>());
 
 
         }

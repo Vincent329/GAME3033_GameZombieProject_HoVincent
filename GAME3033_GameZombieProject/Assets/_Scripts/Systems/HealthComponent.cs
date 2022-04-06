@@ -33,6 +33,14 @@ public class HealthComponent : MonoBehaviour, IDamageable
         }
     }
 
+    public virtual void Heal(float healValue)
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth = Mathf.Clamp(currentHealth + healValue, 0, maxHealth);
+        }
+    }
+
     public virtual void Destroy()
     {
         Destroy(gameObject);

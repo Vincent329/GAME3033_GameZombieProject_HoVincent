@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public InventoryComponent inventory;
     public WeaponHolder weaponHolder;
     public GameUIController gameUIController;
+    public HealthComponent healthComponent;
 
     private void Awake()
     {
@@ -32,6 +33,11 @@ public class PlayerController : MonoBehaviour
         {
             gameUIController = FindObjectOfType<GameUIController>();
         }
+        if (healthComponent == null)
+        {
+            healthComponent = GetComponent<HealthComponent>();
+        }
+
 
     }
 

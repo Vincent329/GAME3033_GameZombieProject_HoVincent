@@ -153,8 +153,7 @@ public class WeaponHolder : MonoBehaviour
         Debug.Log("Weapon Stats: " + equippedWeapon.weaponStats.weaponName);
        
         equippedWeapon.Initialize(this, weaponScriptable);
-        //PlayerEvents.InvokeOnWeaponEquipped(equippedWeapon);
-        weaponAmmoUI.OnWeaponEquipped(equippedWeapon);
+        PlayerEvents.InvokeOnWeaponEquipped(equippedWeapon);
     }
 
     public void UnquipWeapon()

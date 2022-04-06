@@ -40,4 +40,9 @@ public class ZombieComponent : MonoBehaviour
 
         stateMachine.Initialize(ZombieStateType.Following);
     }
+
+    void DisableNavMesh()
+    {
+        zombieNavMesh.enabled = false;
+    }
 }
