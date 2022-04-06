@@ -58,9 +58,13 @@ public class WeaponComponent : MonoBehaviour
         
     }
 
-    public void Initialize(WeaponHolder _weaponHolder)
+    public void Initialize(WeaponHolder _weaponHolder, WeaponScriptable weaponScriptable)
     {
         weaponHolder = _weaponHolder;
+        if (weaponScriptable)
+        {
+            weaponStats = weaponScriptable.weaponStats;
+        }
     }
 
     public virtual void StartFiringWeapon()

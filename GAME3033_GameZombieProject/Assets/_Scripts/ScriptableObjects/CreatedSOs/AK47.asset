@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db2e38b2d6aea54a88c736dbf2ef595, type: 3}
   m_Name: AK47
   m_EditorClassIdentifier: 
-  name: Item
+  name: AK-47
   itemCategory: 1
   itemPrefab: {fileID: 5187402873086734599, guid: ae2e5629f76a4974bb77839a46cf9250, type: 3}
   isStackable: 0
-  maxSize: 1
-  amountValue: 1
-  weaponStates:
+  maxSize: 30
+  amountValue: 30
+  weaponStats:
     weaponType: 0
-    weaponName: AK47
+    weaponName: AK-47
     damage: 35
     bulletsInClip: 30
     clipSize: 30
     fireStartDelay: 0
-    fireRate: 6.125
-    fireDistance: 1000
+    fireRate: 0.5
+    fireDistance: 500
     repeating: 1
     weaponHitLayers:
       serializedVersion: 2

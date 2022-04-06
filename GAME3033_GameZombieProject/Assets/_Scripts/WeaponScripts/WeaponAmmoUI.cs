@@ -23,7 +23,7 @@ public class WeaponAmmoUI : MonoBehaviour
 
     }
 
-    void OnWeaponEquipped(WeaponComponent _weaponComponent)
+    public void OnWeaponEquipped(WeaponComponent _weaponComponent)
     {
         weaponComponent = _weaponComponent;
     }

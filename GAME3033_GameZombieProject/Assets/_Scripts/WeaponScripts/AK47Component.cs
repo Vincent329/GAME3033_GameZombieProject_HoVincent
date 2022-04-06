@@ -45,7 +45,6 @@ public class AK47Component : WeaponComponent
         }
         else if (weaponStats.bulletsInClip <= 0)
         {
-            Debug.Log("Reload the damn thing");
             weaponHolder.StartReloading();
         }
     }

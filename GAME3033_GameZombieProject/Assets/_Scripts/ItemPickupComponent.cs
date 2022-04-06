@@ -35,7 +35,12 @@ public class ItemPickupComponent : MonoBehaviour
         if (amount > 0)
         {
             itemInstance.SetAmount(amount);
+        } 
+        else
+        {
+            itemInstance.SetAmount(pickupItem.amountValue);
         }
+        ApplyMesh();
     }
 
     private void ApplyMesh()
@@ -50,6 +55,21 @@ public class ItemPickupComponent : MonoBehaviour
 
         // add to inventory here
         // get the reference to player inventory then add an item to it
+
+        InventoryComponent playerInventory = other.GetComponent<InventoryComponent>();
+        if (playerInventory)
+        {
+            playerInventory.AddItem(itemInstance, amount);
+        }
+
+        if (itemInstance.itemCategory == ItemCategory.WEAPON)
+        {
+            WeaponHolder playerWeapon = other.GetComponent<WeaponHolder>();
+            if (playerWeapon.GetEquippedWeapon != null)
+            {
+                playerWeapon.GetEquippedWeapon.weaponStats.totalBullets += pickupItem.amountValue;
+            }
+        }
 
         Destroy(gameObject);
     }

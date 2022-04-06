@@ -52,6 +52,7 @@ public class GameUIController : MonoBehaviour
         {
             EnableGameMenu();
         }
+        
     }
 
     public void DisableAllMenus()
