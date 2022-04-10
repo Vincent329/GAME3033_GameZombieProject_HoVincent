@@ -2688,7 +2688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5528723153717939566}
   m_LocalRotation: {x: -0.36561444, y: -0.43532336, z: 0.2373782, w: 0.7877}
-  m_LocalPosition: {x: -0.0167, y: 0.3599, z: 0.1482}
+  m_LocalPosition: {x: -0.049, y: 0.366, z: 0.062}
   m_LocalScale: {x: 0.09999998, y: 0.099999964, z: 0.09999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4251,6 +4251,7 @@ MonoBehaviour:
     m_Bits: 55
   aimLocation: {fileID: 1359892060}
   cinemachineAimCamera: {fileID: 245052006}
+  uiController: {fileID: 0}
 --- !u!114 &5196585135920442613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4268,8 +4269,11 @@ MonoBehaviour:
   isJumping: 0
   isRunning: 0
   isAiming: 0
+  isInventoryOn: 0
   inventory: {fileID: 0}
+  weaponHolder: {fileID: 0}
   gameUIController: {fileID: 0}
+  healthComponent: {fileID: 0}
 --- !u!114 &7433028225145881414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4285,6 +4289,8 @@ MonoBehaviour:
   weaponToSpawn: {fileID: 5187402873086734599, guid: ae2e5629f76a4974bb77839a46cf9250, type: 3}
   playerController: {fileID: 0}
   weaponSocketLocation: {fileID: 800097289}
+  startWeapon: {fileID: 0}
+  weaponAmmoUI: {fileID: 0}
 --- !u!114 &611921916923718239
 MonoBehaviour:
   m_ObjectHideFlags: 0

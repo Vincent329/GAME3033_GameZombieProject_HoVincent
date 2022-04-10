@@ -4,8 +4,8 @@ using UnityEngine;
 public enum WeaponType
 {
     ASSAULTRIFLE,
-    PISTOL,
-    MACHINEGUN,
+    SHOTGUN,
+    SNIPER,
 }
 public enum WeaponFiringPattern
 {

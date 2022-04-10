@@ -16,6 +16,6 @@ MonoBehaviour:
   itemCategory: 2
   itemPrefab: {fileID: 4713264729712948007, guid: f3fc7251d57dc574db271aa5fa2fb863, type: 3}
   isStackable: 1
-  maxSize: 1
+  maxSize: 10
   amountValue: 1
   effect: 30
