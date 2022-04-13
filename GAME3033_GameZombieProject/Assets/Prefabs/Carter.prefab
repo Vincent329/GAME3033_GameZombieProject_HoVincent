@@ -691,14 +691,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c430f382484144e925c097c2d33cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 0.57
+  m_Weight: 0.826
   m_Data:
     m_ConstrainedObject: {fileID: 8374959487469677256}
     m_SourceObjects:
       m_Length: 1
       m_Item0:
         transform: {fileID: 1359892060}
-        weight: 0.34
+        weight: 0.73
       m_Item1:
         transform: {fileID: 0}
         weight: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8311195, y: 1}
+    m_SensorSize: {x: 1.776204, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4106,6 +4106,7 @@ GameObject:
   - component: {fileID: 611921916923718239}
   - component: {fileID: 919132148893818983}
   - component: {fileID: 919132148893818984}
+  - component: {fileID: 919132148893818985}
   m_Layer: 6
   m_Name: Carter
   m_TagString: Player
@@ -4289,7 +4290,7 @@ MonoBehaviour:
   weaponToSpawn: {fileID: 5187402873086734599, guid: ae2e5629f76a4974bb77839a46cf9250, type: 3}
   playerController: {fileID: 0}
   weaponSocketLocation: {fileID: 800097289}
-  startWeapon: {fileID: 0}
+  startWeapon: {fileID: 11400000, guid: a8bc384ab13cda4409c0fd73e895304a, type: 2}
   weaponAmmoUI: {fileID: 0}
 --- !u!114 &611921916923718239
 MonoBehaviour:
@@ -4405,6 +4406,19 @@ MonoBehaviour:
   - m_Rig: {fileID: 102459099}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &919132148893818985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9013406880824219285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06e1e07e24948f429413a16de31ae3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Items: []
 --- !u!1 &9033135255317336424
 GameObject:
   m_ObjectHideFlags: 0

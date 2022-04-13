@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037d55595676211468a01e2db3fb4e99, type: 3}
   m_Name: HealPotion
   m_EditorClassIdentifier: 
-  name: Item
+  name: Health Potion
   itemCategory: 2
   itemPrefab: {fileID: 4713264729712948007, guid: f3fc7251d57dc574db271aa5fa2fb863, type: 3}
   isStackable: 1

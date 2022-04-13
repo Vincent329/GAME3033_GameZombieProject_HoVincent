@@ -14,7 +14,9 @@ public class PlayerHealthComponent : HealthComponent
     public override void Destroy()
     {
         Debug.Log("Player dead");
-        Application.Quit();
+        //Application.Quit();
+
+        // Load a new Game Over Scene when at 0 
     }
 
 }

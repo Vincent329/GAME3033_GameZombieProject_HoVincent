@@ -112,6 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupItem: {fileID: 11400000, guid: 40e1df75539c3d746bf6ca8160fd95dc, type: 2}
-  amount: 1
+  amount: -1
   propMeshRenderer: {fileID: 0}
   propMeshFilter: {fileID: 0}

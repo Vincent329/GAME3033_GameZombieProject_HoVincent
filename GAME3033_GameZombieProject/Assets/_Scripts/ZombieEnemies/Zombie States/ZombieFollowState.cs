@@ -39,6 +39,10 @@ public class ZombieFollowState : ZombieStates
             {
                 stateMachine.ChangeState(ZombieStateType.Attacking);
             }
+            if (followTarget == null)
+            {
+                stateMachine.ChangeState(ZombieStateType.Idling);
+            }
         }
         
     }

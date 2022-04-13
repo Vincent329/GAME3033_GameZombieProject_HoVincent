@@ -14,12 +14,18 @@ public class ItemPickupComponent : MonoBehaviour
 
     [SerializeField] MeshRenderer propMeshRenderer;
     [SerializeField] MeshFilter propMeshFilter;
+    [SerializeField] private ItemTable itemTable;
 
     ItemScript itemInstance;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (itemTable != null)
+        {
+            int randomItemIndex = (int)Random.Range(0, itemTable.itemTable.Count);
+            pickupItem = itemTable.getItemIndex(randomItemIndex);
+        }
         InstantiateItem();
     }
 
@@ -64,11 +70,22 @@ public class ItemPickupComponent : MonoBehaviour
 
         if (itemInstance.itemCategory == ItemCategory.WEAPON)
         {
-            WeaponHolder playerWeapon = other.GetComponent<WeaponHolder>();
-            if (playerWeapon.GetEquippedWeapon != null)
+            WeaponHolder weaponHolder = other.GetComponent<WeaponHolder>();
+            WeaponComponent tempWeaponData = itemInstance.itemPrefab.GetComponent<WeaponComponent>();
+            if (weaponHolder.weaponAmmoDictionary.ContainsKey(tempWeaponData.weaponStats.weaponType))
             {
-                playerWeapon.GetEquippedWeapon.weaponStats.totalBullets += pickupItem.amountValue;
+                WeaponStats tempWeaponStats = weaponHolder.weaponAmmoDictionary[tempWeaponData.weaponStats.weaponType];
+                tempWeaponStats.totalBullets += itemInstance.amountValue;
+                weaponHolder.weaponAmmoDictionary[tempWeaponData.weaponStats.weaponType] = tempWeaponStats;
+                if (weaponHolder.GetEquippedWeapon != null)
+                {
+                    weaponHolder.GetEquippedWeapon.weaponStats = weaponHolder.weaponAmmoDictionary[tempWeaponStats.weaponType];
+                }
+            } else
+            {
+                weaponHolder.weaponAmmoDictionary.Add(tempWeaponData.weaponStats.weaponType, tempWeaponData.weaponStats);
             }
+           
         }
 
         Destroy(gameObject);
