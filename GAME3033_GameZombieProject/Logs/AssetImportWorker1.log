@@ -15,7 +15,7 @@ D:/GitHub/GAME3033_GameZombieProject_HoVincent/GAME3033_GameZombieProject_HoVinc
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-50998
+56750
 Successfully changed project path to: D:/GitHub/GAME3033_GameZombieProject_HoVincent/GAME3033_GameZombieProject_HoVincent/GAME3033_GameZombieProject
 D:/GitHub/GAME3033_GameZombieProject_HoVincent/GAME3033_GameZombieProject_HoVincent/GAME3033_GameZombieProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/GitHub/GAME3033_GameZombieProject_HoVincent/GAME3033_GameZombieProject_HoVinc
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 39.87 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 48.02 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.7f1 (6bd9e232123f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Resources/UnitySubsystems
@@ -63,116 +63,90 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56716
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56644
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.122174 seconds.
+Registered in 0.008133 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 39.99 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 45.99 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.247 seconds
+- Completed reload, in  0.525 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3247ms)
-		BeginReloadAssembly (2298ms)
+	ReloadAssembly (526ms)
+		BeginReloadAssembly (67ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (616ms)
-			LoadAssemblies (2302ms)
+		EndReloadAssembly (384ms)
+			LoadAssemblies (65ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (322ms)
+			SetupTypeCache (90ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (219ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (225ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (40ms)
+				RefreshPlugins (46ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (122ms)
-				ProcessInitializeOnLoadMethodAttributes (40ms)
+				ProcessInitializeOnLoadAttributes (125ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004004 seconds.
+Registered in 0.003463 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 43.49 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 46.98 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path D:\GitHub\GAME3033_GameZombieProject_HoVincent\GAME3033_GameZombieProject_HoVincent\GAME3033_GameZombieProject\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <31c0f51ac5a24a22ba784db24f4ba023>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <31c0f51ac5a24a22ba784db24f4ba023>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <31c0f51ac5a24a22ba784db24f4ba023>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <31c0f51ac5a24a22ba784db24f4ba023>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <31c0f51ac5a24a22ba784db24f4ba023>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <0cde216a590a4d6fbc3d7db7ac203c5d>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-UnityEngine.ScriptableObject:CreateInstance (System.Type)
-UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
-UnityEditor.Tools:get_get ()
-UnityEditor.Tools:get_visibleLayers ()
-UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs:121)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
-
 Mono: successfully reloaded assembly
-- Completed reload, in  4.803 seconds
+- Completed reload, in  1.376 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4804ms)
-		BeginReloadAssembly (103ms)
+	ReloadAssembly (1377ms)
+		BeginReloadAssembly (102ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (4566ms)
-			LoadAssemblies (2082ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (1187ms)
+			LoadAssemblies (63ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (476ms)
+			SetupTypeCache (174ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (1924ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (854ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
+				InitializePlatformSupportModulesInManaged (12ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (44ms)
-				BeforeProcessingInitializeOnLoad (64ms)
-				ProcessInitializeOnLoadAttributes (1139ms)
-				ProcessInitializeOnLoadMethodAttributes (653ms)
-				AfterProcessingInitializeOnLoad (13ms)
+				RefreshPlugins (47ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (705ms)
+				ProcessInitializeOnLoadMethodAttributes (19ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
-Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.97 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2889 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 42 unused Assets / (175.5 KB). Loaded Objects now: 3353.
-Memory consumption went from 133.1 MB to 133.0 MB.
-Total: 4.199100 ms (FindLiveObjects: 0.381500 ms CreateObjectMapping: 0.070400 ms MarkObjects: 3.593600 ms  DeleteObjects: 0.151800 ms)
+Unloading 2893 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 42 unused Assets / (172.6 KB). Loaded Objects now: 3363.
+Memory consumption went from 136.6 MB to 136.5 MB.
+Total: 3.540300 ms (FindLiveObjects: 0.296500 ms CreateObjectMapping: 0.070300 ms MarkObjects: 3.052800 ms  DeleteObjects: 0.119200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -186,28 +160,112 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 694.695236 seconds.
-  path: Assets/Prefabs/Shotgun.prefab
-  artifactKey: Guid(0d1b1b8c9672af24bbaa46b66588cbcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Shotgun.prefab using Guid(0d1b1b8c9672af24bbaa46b66588cbcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f100043805ce5b3eaa2f57739d2a6439') in 0.189186 seconds 
+  Time since last request: 55012.809060 seconds.
+  path: Assets/CityTools/model/piso.obj
+  artifactKey: Guid(353d5e0a20aaad942bd71a909fc4a33f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/model/piso.obj using Guid(353d5e0a20aaad942bd71a909fc4a33f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29c867b334a02a83d9a22702df024228') in 0.122911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.807571 seconds.
+  path: Assets/CityTools/pref/ap01_Rooftop exitobj (1).prefab
+  artifactKey: Guid(49c778a75bd8a8f4888be6f88e2cfcee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/ap01_Rooftop exitobj (1).prefab using Guid(49c778a75bd8a8f4888be6f88e2cfcee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eb0d3c88484a2476cf64431168e5c1d') in 0.255056 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/CityTools/pref/Buildings02_gorundfloor 1.prefab
+  artifactKey: Guid(6337350c8a79412429a86b7be6826b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Buildings02_gorundfloor 1.prefab using Guid(6337350c8a79412429a86b7be6826b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d2f70bd1b4eabea5f16161aea21e114') in 0.416433 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/CityTools/pref/crossing.prefab
+  artifactKey: Guid(b62b2dbf90070b041ac1d073f1a9840b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/crossing.prefab using Guid(b62b2dbf90070b041ac1d073f1a9840b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baab0a8d454d7c98184845036f69933e') in 0.075431 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000016 seconds.
-  path: Assets/Art Assets/Cope! Free Skybox Pack/tiff/forest_left.tif
-  artifactKey: Guid(ace2a32eabe9d471d8312e991a04be85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Assets/Cope! Free Skybox Pack/tiff/forest_left.tif using Guid(ace2a32eabe9d471d8312e991a04be85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4a037fabb7cc6c02a0f9af216df9085') in 0.027189 seconds 
+  path: Assets/CityTools/pref/floor_ap01.prefab
+  artifactKey: Guid(55ec99d514b5b4644b2d307f41b99cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/floor_ap01.prefab using Guid(55ec99d514b5b4644b2d307f41b99cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7bf3fae19cc8f4b5407e046b1a4db56') in 0.077105 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Art Assets/Cope! Free Skybox Pack/tiff/sunset_right.tif
-  artifactKey: Guid(f6da010f57b394aab8e09c807471fb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Assets/Cope! Free Skybox Pack/tiff/sunset_right.tif using Guid(f6da010f57b394aab8e09c807471fb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6edc40c321a9bc9c5b00a24090428c96') in 0.010302 seconds 
+  Time since last request: 0.000017 seconds.
+  path: Assets/CityTools/pref/Buildings03_ceiling.prefab
+  artifactKey: Guid(25d2956891354ed4c9d5c0183c369c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Buildings03_ceiling.prefab using Guid(25d2956891354ed4c9d5c0183c369c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b149365137c708e54317c5f26427575') in 0.014912 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Art Assets/Cope! Free Skybox Pack/tiff/mossymountains_down.tif
-  artifactKey: Guid(5f05612da30ee4b15bd39dc697cac986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Assets/Cope! Free Skybox Pack/tiff/mossymountains_down.tif using Guid(5f05612da30ee4b15bd39dc697cac986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e83edc0eb0380c6746984c53b16b576c') in 0.011663 seconds 
+  Time since last request: 0.000017 seconds.
+  path: Assets/CityTools/pref/Corner_T.prefab
+  artifactKey: Guid(8bca0051c89739e42865beb8e59f0e36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Corner_T.prefab using Guid(8bca0051c89739e42865beb8e59f0e36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c67a189d1d3fad1630147d7c9eb330c0') in 0.014948 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/CityTools/pref/Buildings03_ceiling 1.prefab
+  artifactKey: Guid(b51e7aee47a32c845be2096ba3fc32e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Buildings03_ceiling 1.prefab using Guid(b51e7aee47a32c845be2096ba3fc32e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '100f960692a3fdc4055c98feacd5c465') in 0.024748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/CityTools/pref/Buildings02_floor.prefab
+  artifactKey: Guid(01b118cebc9b71348971e05d5807dd03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Buildings02_floor.prefab using Guid(01b118cebc9b71348971e05d5807dd03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e1f7acedc8f54ec9142a3b32d38afd7') in 0.019748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/CityTools/pref/Buildings02_door.prefab
+  artifactKey: Guid(8923669eae1f46246b0e9f21fd24cda4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Buildings02_door.prefab using Guid(8923669eae1f46246b0e9f21fd24cda4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38f82544c9bbcbb62af1d548ba3c5b84') in 0.014812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/CityTools/pref/floor_roof.prefab
+  artifactKey: Guid(405cca8c2d83521419124e3ed9d16394) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/floor_roof.prefab using Guid(405cca8c2d83521419124e3ed9d16394) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e760ca29c1889fb93a5df9cbc2119a2f') in 0.024783 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/CityTools/pref/Buildings02_Commercial door stop.prefab
+  artifactKey: Guid(2c4dc7b38f92016418b1fc18dea211be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Buildings02_Commercial door stop.prefab using Guid(2c4dc7b38f92016418b1fc18dea211be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '552e0ae3c002744d501b839860f26ee6') in 0.013461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/CityTools/pref/Buildings02_WindowB.prefab
+  artifactKey: Guid(665c0db98fcf1c94ea27e1b3fdce8439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Buildings02_WindowB.prefab using Guid(665c0db98fcf1c94ea27e1b3fdce8439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aca91dafcd6671957b38d4d38613f887') in 0.078278 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/CityTools/pref/curve.prefab
+  artifactKey: Guid(6a1980f1c2e01e146b5ed05619fb9535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/curve.prefab using Guid(6a1980f1c2e01e146b5ed05619fb9535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b91e9fe55807f0759fc0badf90cb92cd') in 0.015470 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.753999 seconds.
+  path: Assets/CityTools/pref/piso (4).prefab
+  artifactKey: Guid(be1e3550e66add64abe9332726deb1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/piso (4).prefab using Guid(be1e3550e66add64abe9332726deb1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cc469a6a027a18bda034745f273565c') in 0.013177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/CityTools/pref/Stairway entrance.prefab
+  artifactKey: Guid(fadc966e5b84f1746b25316eec034067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/Stairway entrance.prefab using Guid(fadc966e5b84f1746b25316eec034067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b23fb05b767c994085a09327758fc7b') in 0.013818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/CityTools/pref/street 1.prefab
+  artifactKey: Guid(b35abb560e7349e418e4f00ef63f6de3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/street 1.prefab using Guid(b35abb560e7349e418e4f00ef63f6de3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80963a360f0dfc83470e178ef08711bc') in 0.018187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/CityTools/pref/window_ap01.prefab
+  artifactKey: Guid(9986344fcb1d71c4cbc43585c6edbc69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CityTools/pref/window_ap01.prefab using Guid(9986344fcb1d71c4cbc43585c6edbc69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1447d7b87e1586246fee0ccafcff0c84') in 0.014831 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

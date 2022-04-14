@@ -145,7 +145,6 @@ public class PlayerMovement : MonoBehaviour
     public void OnMovement(InputValue value)
     {
         inputVector = value.Get<Vector2>();
-        Debug.Log(inputVector);
         animController.SetFloat(movementXHash, inputVector.x);
         animController.SetFloat(movementYHash, inputVector.y);
     }

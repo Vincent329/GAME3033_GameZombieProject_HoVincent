@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthComponent : HealthComponent
 {
@@ -17,6 +18,7 @@ public class PlayerHealthComponent : HealthComponent
         //Application.Quit();
 
         // Load a new Game Over Scene when at 0 
+        // ... Play a death animation?
     }
 
 }
