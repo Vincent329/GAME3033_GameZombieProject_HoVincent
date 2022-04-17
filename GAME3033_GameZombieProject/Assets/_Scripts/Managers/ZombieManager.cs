@@ -23,7 +23,12 @@ public class ZombieManager : MonoBehaviour
             SpawnZombie();
         }
     }
-    
+
+    private void Update()
+    {
+        
+    }
+
     void SpawnZombie()
     {
         GameObject zombieToSpawn = zombiePrefabs[Random.Range(0, zombiePrefabs.Length)];

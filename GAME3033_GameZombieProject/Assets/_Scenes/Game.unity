@@ -14972,57 +14972,9 @@ PrefabInstance:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 919132148893818973}
-    - target: {fileID: 1024597680522302, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405812215667218, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1418193975600942, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
       propertyPath: m_Name
       value: Zombie_Bellboy_Male_01 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418193975600942, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1430034598689156, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1579712924896360, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681389450948628, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1695257667922630, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1713630384959468, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812340059171244, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1816275834592480, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1917986847788544, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1977716463237112, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4243538704547566, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
       propertyPath: m_RootOrder
@@ -15066,10 +15018,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4243538704547566, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 137807016738839558, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -74292,7 +74240,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26904
+  m_Name: pb_Mesh27434
   serializedVersion: 10
   m_SubMeshes: []
   m_Shapes:

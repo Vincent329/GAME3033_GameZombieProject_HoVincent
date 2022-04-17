@@ -45,4 +45,10 @@ public class ZombieComponent : MonoBehaviour
     {
         zombieNavMesh.enabled = false;
     }
+
+    public void Remove()
+    {
+        DisableNavMesh();
+        Destroy(gameObject);
+    }
 }

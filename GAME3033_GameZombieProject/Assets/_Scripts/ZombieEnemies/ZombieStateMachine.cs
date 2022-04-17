@@ -46,8 +46,6 @@ public class ZombieStateMachine : MonoBehaviour
             return;
         }
 
-
-
         // Change to desired state and start it
 
         currentState = states[nextState];

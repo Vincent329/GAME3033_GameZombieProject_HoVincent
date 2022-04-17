@@ -34,6 +34,7 @@ public class ZombieAttackState : ZombieStates
     public override void IntervalUpdate()
     {
         base.IntervalUpdate();
+        // moment player goes into the state, zombie attacks
         damageableObject?.TakeDamage(ownerZombie.zombieDamage);
     }
 
