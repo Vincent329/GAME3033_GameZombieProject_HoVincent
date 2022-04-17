@@ -7,8 +7,8 @@ using Cinemachine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    [SerializeField] private float runSpeed = 10;
-    [SerializeField] private float walkSpeed = 5;
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float walkSpeed;
     [SerializeField] private float walkjumpForce = 5;
     [SerializeField] private float runjumpForce = 2;
     [SerializeField] private float currentJumpForce;
