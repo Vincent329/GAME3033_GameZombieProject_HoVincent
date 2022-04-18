@@ -39,6 +39,7 @@ public class TimerSystem : MonoBehaviour
         {
             stopTimer = true;
             timer = 0;
+            GameManager.Instance.GetComponent<AudioSource>().Stop();
 
             // Load Win Screen from here
             SceneLoadManager.Instance.LoadWinScreen();

@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
             AppEvents.InvokeOnMouseCursorEnable(false);
         }
         AppEvents.InvokeOnPauseEvent(false);
+        GameManager.Instance.GetComponent<AudioSource>().Play();
     }
 
     private void OldCameraRotation()
