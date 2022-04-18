@@ -58,6 +58,10 @@ public class BombScript : HealthComponent
             if (rb != null)
             {
                 Debug.Log(rb.name);
+                if (hits.GetComponent<ZombieComponent>() != null)
+                {
+                    hits.GetComponent<ZombieComponent>().StunEnemy();
+                }
                 rb.AddExplosionForce(explosionForce, explosionOrigin.position, radius);
             }
         }
@@ -66,7 +70,7 @@ public class BombScript : HealthComponent
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(explosionOrigin.position, radius);
 
     }
 }

@@ -23,7 +23,10 @@ public class ZombieFollowState : ZombieStates
     public override void IntervalUpdate()
     {
         base.IntervalUpdate();
-        ownerZombie.zombieNavMesh.SetDestination(followTarget.transform.position);
+        if (ownerZombie.zombieNavMesh.enabled)
+        {
+            ownerZombie.zombieNavMesh.SetDestination(followTarget.transform.position);
+        }
     }
 
     public override void Update()

@@ -12,12 +12,26 @@ public class ZombieComponent : MonoBehaviour
     public ZombieStateMachine stateMachine;
 
     public GameObject followTarget;
+    
+    [Header("Physics Properties")]
+    public bool knockedBack;
+    public bool isGrounded;
+    public Transform groundCheckOrigin;
+    public float groundCheckRadius;
+    public LayerMask groundMasks;
+    public float knockbackTimer;
+    public float knockbackDuration;
+
+
+
+    public Rigidbody rigidBody;
 
     private void Awake()
     {
         zombieNavMesh = GetComponent<NavMeshAgent>();
         zombieAnimator = GetComponent<Animator>();
         stateMachine = GetComponent<ZombieStateMachine>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     private void Start()
@@ -28,7 +42,7 @@ public class ZombieComponent : MonoBehaviour
     public void Initialize(GameObject _followTarget)
     {
         followTarget = _followTarget;
-
+        knockedBack = false;
         ZombieIdleState idleState = new ZombieIdleState(this, stateMachine);
         ZombieFollowState followState = new ZombieFollowState(followTarget, this, stateMachine);
         ZombieAttackState attackState = new ZombieAttackState(followTarget, this, stateMachine);
@@ -40,10 +54,40 @@ public class ZombieComponent : MonoBehaviour
 
         stateMachine.Initialize(ZombieStateType.Following);
     }
+    private void Update()
+    {
+        if (!knockedBack)
+        {
+            CheckGround();
+        }
+        else
+        {
+            knockbackTimer += Time.deltaTime;
+            if (knockbackTimer > knockbackDuration)
+            {
+                knockedBack = false;
+            }
+        }
+    }
+
+    void EnableNavMesh()
+    {
+        zombieNavMesh.enabled = true;
+    }
+    
+    public void StunEnemy()
+    {
+        DisableNavMesh();
+
+    }
 
     void DisableNavMesh()
     {
+        Debug.Log("Disable");
+        knockbackTimer = 0;
+        rigidBody.mass = 3;
         zombieNavMesh.enabled = false;
+        knockedBack = true;
     }
 
     public void Remove()
@@ -51,9 +95,24 @@ public class ZombieComponent : MonoBehaviour
         DisableNavMesh();
         Destroy(gameObject);
     }
-
+    
     private void CheckGround()
     {
+        isGrounded = Physics.CheckSphere(groundCheckOrigin.position, groundCheckRadius, groundMasks);
 
+        if (isGrounded && GetComponent<ZombieHealthComponent>().CurrentHealth > 0)
+        {
+            EnableNavMesh();
+        }
+        else
+        {
+            DisableNavMesh();
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(groundCheckOrigin.position, groundCheckRadius);
     }
 }

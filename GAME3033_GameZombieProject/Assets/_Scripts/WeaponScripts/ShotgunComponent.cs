@@ -33,6 +33,7 @@ public class ShotgunComponent : WeaponComponent
         foreach (GameObject target in targets)
         {
             DealDamage(target);
+        
         }
     }
 
@@ -40,19 +41,22 @@ public class ShotgunComponent : WeaponComponent
     {
         IDamageable damageable = zombie.GetComponent<IDamageable>();
         damageable?.TakeDamage(weaponStats.damage);
-        Debug.Log(damageable);
-    }
-
-    IEnumerator FireDelay()
-    {
-        damageArea.gameObject.SetActive(true);
-        List<GameObject> targets = damageArea.GetTargets;
-
-        foreach (GameObject target in targets)
+        if (zombie.GetComponent<ZombieComponent>() != null)
         {
-            DealDamage(target);
+            zombie.GetComponent<ZombieComponent>().StunEnemy();
         }
-        yield return new WaitForSeconds(0.06f);
-        damageArea.gameObject.SetActive(false);
     }
+
+    //IEnumerator FireDelay()
+    //{
+    //    damageArea.gameObject.SetActive(true);
+    //    List<GameObject> targets = damageArea.GetTargets;
+
+    //    foreach (GameObject target in targets)
+    //    {
+    //        DealDamage(target);
+    //    }
+    //    yield return new WaitForSeconds(0.06f);
+    //    damageArea.gameObject.SetActive(false);
+    //}
 }
