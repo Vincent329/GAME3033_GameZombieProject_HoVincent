@@ -3502,6 +3502,9 @@ MonoBehaviour:
   knockbackDuration: 4.23
   scoreValue: 10
   rigidBody: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 645e9a4488754ac42bf645f316c2628c, type: 3}
+  - {fileID: 8300000, guid: aef73f9f013e3b24da3545e7e6ff9b9f, type: 3}
 --- !u!114 &1643331810
 MonoBehaviour:
   m_ObjectHideFlags: 0
