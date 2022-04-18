@@ -51,4 +51,9 @@ public class ZombieComponent : MonoBehaviour
         DisableNavMesh();
         Destroy(gameObject);
     }
+
+    private void CheckGround()
+    {
+
+    }
 }

@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float currentSpeed;
 
     private PlayerController playerController;
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private Animator animController;
 
     // references
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         playerController = GetComponent<PlayerController>();
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         animController = GetComponent<Animator>();
         cinemachineAimCamera.gameObject.SetActive(false);
         aimingTarget.transform.rotation = Quaternion.identity;
@@ -167,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 currentSpeed /= 3;
             }
-            rigidbody.AddForce((transform.up + (moveDirection * currentSpeed)) * currentJumpForce, ForceMode.Impulse);
+            rb.AddForce((transform.up + (moveDirection * currentSpeed)) * currentJumpForce, ForceMode.Impulse);
             animController.SetBool(isJumpingHash, playerController.isJumping);
         }
     }
@@ -262,6 +262,6 @@ public class PlayerMovement : MonoBehaviour
 
         playerController.isJumping = false;
         animController.SetBool(isJumpingHash, false);
-        rigidbody.velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
     }
 }
