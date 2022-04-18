@@ -11,6 +11,8 @@ public class ZombieManager : MonoBehaviour
     public int numZombiesToSpawn;
     public GameObject[] zombiePrefabs;
     public SpawnerVolume[] spawnerVolumes;
+    [Range(1, 4)] public float spawnInterval;
+    public float spawnTimer;
 
     GameObject followGameObject;
     // Start is called before the first frame update
@@ -18,15 +20,20 @@ public class ZombieManager : MonoBehaviour
     {
         followGameObject = GameObject.FindGameObjectWithTag("Player");
     
-        for (int i = 0; i < numZombiesToSpawn; i++)
-        {
-            SpawnZombie();
-        }
+        //for (int i = 0; i < numZombiesToSpawn; i++)
+        //{
+        //    SpawnZombie();
+        //}
     }
 
     private void Update()
     {
-        
+        spawnTimer += Time.deltaTime;
+        if (spawnTimer >= spawnInterval)
+        {
+            SpawnZombie();
+            spawnTimer = 0;
+        }
     }
 
     void SpawnZombie()
