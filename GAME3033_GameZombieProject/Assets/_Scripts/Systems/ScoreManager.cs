@@ -32,6 +32,7 @@ public class ScoreManager : MonoBehaviour
         scoreText = GetComponent<TextMeshProUGUI>();
         currentScore = 0;
         ScoreUpdate += UpdateScore;
+        UpdateScore(0);
     }
 
     private void OnEnable()

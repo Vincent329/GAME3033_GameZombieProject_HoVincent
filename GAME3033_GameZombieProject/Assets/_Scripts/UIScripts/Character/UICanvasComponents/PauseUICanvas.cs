@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseUICanvas : GameHUDWidget
 {
+    [SerializeField] private Button ResumeButton;
+    [SerializeField] private Button MenuButton;
+
+    private void Start()
+    {
+        ResumeButton.onClick.AddListener(Unpause);
+        MenuButton.onClick.AddListener(ReturnToMenu);
+    }
+
     public void Unpause()
     {
         AppEvents.InvokeOnPauseEvent(false);
@@ -12,7 +22,10 @@ public class PauseUICanvas : GameHUDWidget
 
     public void ReturnToMenu()
     {
-
+        if (SceneLoadManager.Instance.isActiveAndEnabled)
+        {
+            SceneLoadManager.Instance.LoadMenuScreen();
+        }
     }
     public override void EnableWidget()
     {
