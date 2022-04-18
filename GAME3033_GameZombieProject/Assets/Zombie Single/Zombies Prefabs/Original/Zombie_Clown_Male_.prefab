@@ -3784,6 +3784,7 @@ MonoBehaviour:
     m_Bits: 128
   knockbackTimer: 0
   knockbackDuration: 2.93
+  scoreValue: 20
   rigidBody: {fileID: 0}
 --- !u!114 &5295326899624943689
 MonoBehaviour:

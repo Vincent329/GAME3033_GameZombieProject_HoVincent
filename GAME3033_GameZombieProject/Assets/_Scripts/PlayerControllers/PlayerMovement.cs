@@ -176,7 +176,6 @@ public class PlayerMovement : MonoBehaviour
     {
         playerController.isAiming = value.isPressed;
         AimCamera(value.isPressed);
-        Debug.Log("Aiming");
     }
 
     private void CameraRotation()
@@ -249,6 +248,20 @@ public class PlayerMovement : MonoBehaviour
     {
         lookInput = value.Get<Vector2>();
         // aim up, down, adjust animations to have a mask that will let us properly animate aim
+    }
+
+    public void OnPause(InputValue value)
+    {
+        if (AppEvents.currentPause)
+        {
+            AppEvents.InvokeOnPauseEvent(false);
+            AppEvents.InvokeOnMouseCursorEnable(false);
+        }
+        else
+        {
+            AppEvents.InvokeOnPauseEvent(true);
+            AppEvents.InvokeOnMouseCursorEnable(true);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

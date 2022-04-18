@@ -22,7 +22,8 @@ public class ZombieComponent : MonoBehaviour
     public float knockbackTimer;
     public float knockbackDuration;
 
-
+    [Header("Score Value")]
+    public int scoreValue;
 
     public Rigidbody rigidBody;
 
@@ -95,7 +96,12 @@ public class ZombieComponent : MonoBehaviour
         DisableNavMesh();
         Destroy(gameObject);
     }
-    
+
+    public void UpdateScore()
+    {
+        ScoreManager.Instance.InvokeScoreUpdate(scoreValue);
+    }
+
     private void CheckGround()
     {
         isGrounded = Physics.CheckSphere(groundCheckOrigin.position, groundCheckRadius, groundMasks);

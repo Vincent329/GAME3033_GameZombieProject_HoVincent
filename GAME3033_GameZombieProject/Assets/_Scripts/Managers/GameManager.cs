@@ -28,23 +28,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         AppEvents.MouseCursorEnabled += EnableCursor;
+        AppEvents.PauseEnabled += PauseGame;
     }
 
     private void OnDisable()
     {
         AppEvents.MouseCursorEnabled -= EnableCursor;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        AppEvents.PauseEnabled -= PauseGame;
     }
 
     void EnableCursor(bool enable)
@@ -61,5 +51,18 @@ public class GameManager : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    void PauseGame(bool paused)
+    {
+        if (paused)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        EnableCursor(paused);
     }
 }

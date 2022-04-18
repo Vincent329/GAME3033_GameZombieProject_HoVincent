@@ -8,6 +8,7 @@ public class GameUIController : MonoBehaviour
     [SerializeField] private GameHUDWidget GameCanvas;
     //[SerializeField] private GameHUDWidget PauseCanvas;
     [SerializeField] private GameHUDWidget InventoryCanvas;
+    [SerializeField] private GameHUDWidget PauseCanvas;
 
     private GameHUDWidget ActiveWidget;
     public GameHUDWidget GetActiveWidget => ActiveWidget;
@@ -16,16 +17,26 @@ public class GameUIController : MonoBehaviour
     {
         DisableAllMenus();
         EnableGameMenu();
+        AppEvents.PauseEnabled += TogglePause;
     }
-    //
-    //  public void EnablePauseMenu()
-    //  {
-    //      if (ActiveWidget) ActiveWidget.DisableWidget();
-    //     
-    //      ActiveWidget = PauseCanvas;
-    //      ActiveWidget.EnableWidget();
-    //  }
-    //
+
+    private void OnEnable()
+    {
+        AppEvents.PauseEnabled += TogglePause;
+
+    }
+    private void OnDisable()
+    {
+        AppEvents.PauseEnabled -= TogglePause;
+    }
+
+    public void EnablePauseMenu()
+    {
+        if (ActiveWidget) ActiveWidget.DisableWidget();
+
+        ActiveWidget = PauseCanvas;
+        ActiveWidget.EnableWidget();
+    }
 
     public void EnableGameMenu()
     {
@@ -52,13 +63,23 @@ public class GameUIController : MonoBehaviour
         {
             EnableGameMenu();
         }
-        
     }
 
+    public void TogglePause(bool paused)
+    {
+        DisableAllMenus();
+        if (paused)
+        {
+            EnablePauseMenu();
+        } else
+        {
+            EnableGameMenu();
+        }
+    }
     public void DisableAllMenus()
     {
         //GameCanvas.DisableWidget();
-        //PauseCanvas.DisableWidget();
+        PauseCanvas.DisableWidget();
         InventoryCanvas.DisableWidget();
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FireHazard : MonoBehaviour
 {
-    [Range(1,10),SerializeField] private float damageInterval;
+    [Range(0.2f,10),SerializeField] private float damageInterval;
     [SerializeField] private float damageTimer;
     [SerializeField] private float damageValue;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         PlayerHealthComponent playerHealth = other.GetComponent<PlayerHealthComponent>();
         if (playerHealth != null)
@@ -17,6 +17,7 @@ public class FireHazard : MonoBehaviour
             if (damageTimer > damageInterval)
             {
                 playerHealth.GetComponent<IDamageable>()?.TakeDamage(damageValue);
+                damageTimer = 0;
             }
         }
     }
