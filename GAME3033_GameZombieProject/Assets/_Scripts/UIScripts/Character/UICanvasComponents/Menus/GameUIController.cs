@@ -30,6 +30,10 @@ public class GameUIController : MonoBehaviour
         AppEvents.PauseEnabled -= TogglePause;
     }
 
+    private void OnDestroy()
+    {
+        AppEvents.PauseEnabled -= TogglePause;
+    }
     public void EnablePauseMenu()
     {
         if (ActiveWidget) ActiveWidget.DisableWidget();

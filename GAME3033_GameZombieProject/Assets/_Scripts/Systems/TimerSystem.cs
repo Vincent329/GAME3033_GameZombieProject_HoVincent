@@ -41,6 +41,7 @@ public class TimerSystem : MonoBehaviour
             timer = 0;
 
             // Load Win Screen from here
+            SceneLoadManager.Instance.LoadWinScreen();
         }
         if (!stopTimer)
         {

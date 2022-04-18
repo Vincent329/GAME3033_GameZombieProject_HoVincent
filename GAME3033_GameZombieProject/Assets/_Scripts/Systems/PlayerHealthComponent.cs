@@ -19,6 +19,7 @@ public class PlayerHealthComponent : HealthComponent
 
         // Load a new Game Over Scene when at 0 
         // ... Play a death animation?
+        SceneLoadManager.Instance.LoadLoseScreen();
     }
 
 }

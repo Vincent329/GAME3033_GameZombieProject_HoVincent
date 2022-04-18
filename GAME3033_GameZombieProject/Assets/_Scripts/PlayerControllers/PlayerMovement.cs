@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         {
             AppEvents.InvokeOnMouseCursorEnable(false);
         }
+        AppEvents.InvokeOnPauseEvent(false);
     }
 
     private void OldCameraRotation()

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoadManager : MonoBehaviour
 {
     private static SceneLoadManager instance;
-    public static SceneLoadManager Instance;
+    public static SceneLoadManager Instance => instance;
 
     private void Awake()
     {
@@ -22,25 +22,27 @@ public class SceneLoadManager : MonoBehaviour
 
     public void LoadStartScreen()
     {
-
+        SceneManager.LoadScene("StartScene");
     }
 
     public void LoadMenuScreen()
     {
-        
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void LoadGame()
     {
-
+        SceneManager.LoadScene("Game");
     }
 
     public void LoadWinScreen()
     {
+        SceneManager.LoadScene("WinScene");
 
     }
     public void LoadLoseScreen()
     {
+        SceneManager.LoadScene("LoseScene");
 
     }
 }

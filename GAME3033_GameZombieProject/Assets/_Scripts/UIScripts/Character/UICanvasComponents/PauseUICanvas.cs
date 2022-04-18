@@ -24,6 +24,7 @@ public class PauseUICanvas : GameHUDWidget
     {
         if (SceneLoadManager.Instance.isActiveAndEnabled)
         {
+            DisableWidget();
             SceneLoadManager.Instance.LoadMenuScreen();
         }
     }
