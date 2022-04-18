@@ -52,6 +52,7 @@ public class ScoreManager : MonoBehaviour
     private void UpdateScore(int scoreValue)
     {
         currentScore += scoreValue;
+        StaticData.score = currentScore;
         scoreText.text = currentScore.ToString();
     }
 }

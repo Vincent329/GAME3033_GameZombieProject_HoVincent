@@ -15,6 +15,8 @@ public class EndMenuController : MonoBehaviour
         AppEvents.InvokeOnMouseCursorEnable(true);
         RestartButton.onClick.AddListener(RestartGame);
         MenuButton.onClick.AddListener(LoadMenu);
+
+        finalScoreText.text = "Final Score: " + StaticData.score;
     }
 
     private void RestartGame()

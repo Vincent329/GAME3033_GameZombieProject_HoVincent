@@ -564,6 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RestartButton: {fileID: 1856239895}
   MenuButton: {fileID: 188308036}
+  finalScoreText: {fileID: 1108186728}
 --- !u!4 &358975029
 Transform:
   m_ObjectHideFlags: 0
