@@ -22,7 +22,6 @@ public class ShotgunComponent : WeaponComponent
     {
         base.FireWeapon();
 
-        List<ZombieComponent> zombiesInVolume = new List<ZombieComponent>();
         if (firingEffect)
         {
             firingEffect.Play();
@@ -30,7 +29,7 @@ public class ShotgunComponent : WeaponComponent
 
         List<GameObject> targets = damageArea.GetTargets;
 
-        foreach (GameObject target in targets)
+        foreach (GameObject target in targets.ToArray())
         {
             DealDamage(target);
         
@@ -41,6 +40,10 @@ public class ShotgunComponent : WeaponComponent
     {
         IDamageable damageable = zombie.GetComponent<IDamageable>();
         damageable?.TakeDamage(weaponStats.damage);
+        if (zombie.GetComponent<HealthComponent>().CurrentHealth <= 0)
+        {
+            damageArea.GetTargets.Remove(zombie);
+        }
         if (zombie.GetComponent<ZombieComponent>() != null)
         {
             zombie.GetComponent<ZombieComponent>().StunEnemy();
