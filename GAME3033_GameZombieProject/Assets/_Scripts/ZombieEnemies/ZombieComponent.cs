@@ -26,7 +26,7 @@ public class ZombieComponent : MonoBehaviour
     public int scoreValue;
 
     public Rigidbody rigidBody;
-
+    public List<AudioClip> audioClips;
     private void Awake()
     {
         zombieNavMesh = GetComponent<NavMeshAgent>();

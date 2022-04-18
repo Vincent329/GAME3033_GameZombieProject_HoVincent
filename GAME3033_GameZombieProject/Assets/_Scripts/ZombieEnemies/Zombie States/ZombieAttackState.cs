@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ZombieAttackState : ZombieStates
 {
-
     GameObject followTarget;
     float attackRange = 2;
 
@@ -30,6 +29,8 @@ public class ZombieAttackState : ZombieStates
             ownerZombie.zombieNavMesh.isStopped = true;
             ownerZombie.zombieNavMesh.ResetPath();
         }
+        ownerZombie.GetComponent<AudioSource>().clip = ownerZombie.GetComponent<ZombieComponent>().audioClips[1];
+        ownerZombie.GetComponent<AudioSource>().Play();
         ownerZombie.zombieAnimator.SetFloat(movementZHash, 0);
         ownerZombie.zombieAnimator.SetBool(isAttackingHash, true);
     }

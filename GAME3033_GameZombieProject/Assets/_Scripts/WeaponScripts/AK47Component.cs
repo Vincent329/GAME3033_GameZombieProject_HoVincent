@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AK47Component : WeaponComponent
 {
+
     Vector3 hitLocation;
 
     // Start is called before the first frame update
@@ -24,10 +25,14 @@ public class AK47Component : WeaponComponent
         if (weaponStats.bulletsInClip > 0 && !isReloading && !weaponHolder.playerController.isRunning)
         {
             base.FireWeapon();
-
             if (firingEffect)
             {
                 firingEffect.Play();
+            }
+            if (audioSource != null)
+            {
+                audioSource.clip = audioClips[0];
+                audioSource.Play();
             }
 
             // ScreenPointTo Ray, it pionts forwards

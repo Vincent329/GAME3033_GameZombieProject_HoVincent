@@ -10,6 +10,8 @@ public class EndMenuController : MonoBehaviour
     [SerializeField] private Button MenuButton;
     [SerializeField] private TextMeshProUGUI finalScoreText;
 
+
+
     private void Start()
     {
         AppEvents.InvokeOnMouseCursorEnable(true);

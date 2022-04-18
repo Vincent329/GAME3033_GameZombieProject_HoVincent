@@ -46,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameUIController uiController;
     private bool isInventoryOn;
 
+    // Audio Source
+    AudioSource audioSource;
+    public List<AudioClip> audioClips;
+
     // Animator hashes
     public readonly int movementXHash = Animator.StringToHash("MovementX");
     public readonly int movementYHash = Animator.StringToHash("MovementY");
@@ -64,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         cinemachineAimCamera.gameObject.SetActive(false);
         aimingTarget.transform.rotation = Quaternion.identity;
         isInventoryOn = false;
+        audioSource = GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -122,6 +127,10 @@ public class PlayerMovement : MonoBehaviour
         if (!(inputVector.magnitude >= 0.0f))
         {
             moveDirection = Vector3.zero;
+            
+        } else
+        {
+            audioSource.Stop();
         }
 
         moveDirection = transform.forward * inputVector.y + transform.right * inputVector.x;
@@ -148,6 +157,9 @@ public class PlayerMovement : MonoBehaviour
         inputVector = value.Get<Vector2>();
         animController.SetFloat(movementXHash, inputVector.x);
         animController.SetFloat(movementYHash, inputVector.y);
+        audioSource.clip = audioClips[0];
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     public void OnRun(InputValue value)
@@ -168,6 +180,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 currentSpeed /= 3;
             }
+            audioSource.clip = audioClips[1];
+            audioSource.loop = false;
+            audioSource.Play();
+
             rb.AddForce((transform.up + (moveDirection * currentSpeed)) * currentJumpForce, ForceMode.Impulse);
             animController.SetBool(isJumpingHash, playerController.isJumping);
         }

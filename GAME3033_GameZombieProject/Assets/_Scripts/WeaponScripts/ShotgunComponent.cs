@@ -26,27 +26,37 @@ public class ShotgunComponent : WeaponComponent
         {
             firingEffect.Play();
         }
-
+        if (audioSource != null)
+        {
+            audioSource.clip = audioClips[0];
+            audioSource.Play();
+        }
         List<GameObject> targets = damageArea.GetTargets;
 
-        foreach (GameObject target in targets.ToArray())
+        //foreach (GameObject target in targets.ToArray())
+        //{
+        //    DealDamage(target);
+        //}
+        for (int i = 0; i < targets.Count; i++)
         {
-            DealDamage(target);
-        
+            DealDamage(targets[i]);
         }
     }
 
     void DealDamage(GameObject zombie)
     {
-        IDamageable damageable = zombie.GetComponent<IDamageable>();
-        damageable?.TakeDamage(weaponStats.damage);
-        if (zombie.GetComponent<HealthComponent>().CurrentHealth <= 0)
+        if (zombie != null)
         {
-            damageArea.GetTargets.Remove(zombie);
-        }
-        if (zombie.GetComponent<ZombieComponent>() != null)
-        {
-            zombie.GetComponent<ZombieComponent>().StunEnemy();
+            IDamageable damageable = zombie.GetComponent<IDamageable>();
+            damageable?.TakeDamage(weaponStats.damage);
+            if (zombie.GetComponent<HealthComponent>().CurrentHealth <= 0)
+            {
+                damageArea.GetTargets.Remove(zombie);
+            }
+            if (zombie.GetComponent<ZombieComponent>() != null)
+            {
+                zombie.GetComponent<ZombieComponent>().StunEnemy();
+            }
         }
     }
 

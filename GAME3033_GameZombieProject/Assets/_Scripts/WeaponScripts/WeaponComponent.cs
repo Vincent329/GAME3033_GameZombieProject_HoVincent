@@ -44,7 +44,11 @@ public class WeaponComponent : MonoBehaviour
 
     public bool isFiring = false;
     public bool isReloading = false;
+    
     protected Camera mainCamera;
+
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected List<AudioClip> audioClips;
 
     // Start is called before the first frame update
     void Awake()
@@ -65,6 +69,7 @@ public class WeaponComponent : MonoBehaviour
         {
             weaponStats = weaponScriptable.weaponStats;
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void StartFiringWeapon()
@@ -102,6 +107,8 @@ public class WeaponComponent : MonoBehaviour
     public virtual void StartReloading()
     {
         isReloading = true;
+        audioSource.clip = audioClips[1];
+        audioSource.Play();
         ReloadWeapon();
     }
 

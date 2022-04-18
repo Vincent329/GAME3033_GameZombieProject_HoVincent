@@ -19,6 +19,8 @@ public class ZombieDeadState : ZombieStates
             ownerZombie.zombieNavMesh.isStopped = true;
             ownerZombie.zombieNavMesh.ResetPath();
         }
+        ownerZombie.GetComponent<Collider>().enabled = false;
+        ownerZombie.GetComponent<Rigidbody>().useGravity = false;
         ownerZombie.zombieAnimator.SetFloat(movementZHash, 0);
         ownerZombie.zombieAnimator.SetBool(isDeadHash, true);
 
